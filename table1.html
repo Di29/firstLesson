@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        id = 0;
+        $("#add").click(function(){
+            var data1 = $('#data1').val();
+            var data2 = $('#data2').val();
+            console.log(data1 + ' ' + data2);
+            id++;
+            $('#mainTable').append('<tr><td id ="id">'+id+'</td><td>'+data1+'</td><td>'+data2+'</td><td><button class="delete">Delete</button><button class = "edit">Edit</button></td></tr>');
+            
+            $('#data1').val('');
+            $('#data2').val('');
+        });
+        
+        $('table').delegate('.delete', 'click', function(){
+            $(this).parent().parent().remove();
+            id--;
+            $('#mainTable').children().each(function(index){
+                $('#id').text('');
+                for(i=0;i<=id;i++){
+                $('#id').text(i);
+                console.log('i=' + id);
+            }
+            });
+            
+        });
+        
+//        $('table').delegate('edit', 'click', function(){
+//            $(this).parent().parent().
+//        });
+    });
+</script>
+</head>
+
+<body>
+	<span>data#1</span>
+	<input id="data1" type="text" name="">
+
+	<span>data#2</span>
+	<input id="data2" type="text" name="">
+
+	<button id="add">Add</button>
+
+	<hr>
+
+	<table id = "mainTable" border="1">
+		<tr>
+			<td><b>№</td>
+			<td><b>data#1</b></td>
+			<td><b>data#2</b></td>
+			<td><b>action</b></td>
+		</tr>
+		<tr>
+<!--
+			<td>1</td>
+			<td>asd</td>
+			<td>dsa</td>
+			<td><button>Delete</button><button>Edit</button></td>
+-->
+		</tr>
+	</table>
+</body>
+
+</html>

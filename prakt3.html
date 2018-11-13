@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Title</title>
+</head>
+<body>
+	<div id="mydiv">
+		<ul id="myul">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<input type="text" name="myinp" id="myinp">
+		<button id="mybut">CLICK</button>
+		<input type="checkbox" id="mych">
+	</div>
+
+	<script type="text/javascript">
+		mybut.onclick = function (event) {
+			newelem = document.createElement('li');
+			newelem.innerText = myinp.value;
+			parentElement = document.getElementById('myul');
+			if(mych.checked){
+			myul.insertBefore(newelem, parentElement.children[0])
+			}
+			else{
+				parentElement.appendChild(newelem);
+			}
+		}
+		
+
+	</script>
+
+	
+
+</body>
+</html>

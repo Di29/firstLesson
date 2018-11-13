@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Title of the document</title>
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<label>Name:</label>
+		<input type="text" name="myinp1" id = "inp1"/> <br>
+		<p style = "display:none" id = "er1">Введите имя буквами!</p>
+
+		<label>Surname:</label>
+		<input  type="text" name="myinp2" id = "inp2"/> <br>
+		<p style = "display:none" id = "er2">Введите фамилию буквами!</p>
+
+		<label>Age:</label>
+		<input  type="text" name="myinp3" id = "inp3"/> <br>
+		<p style = "display:none" id = "er3">Введите возраст цифрами!</p>
+		<script>
+			inp1.onblur = function(){
+				if(typeof(this) == "number"){
+					this.style = "border: 1px, solid, red";
+					er1.style = "display:block"
+				}
+			}
+		<button id="1">+</button>
+		<button id="2">-</button>
+	</body>
+	<!--<script src = "my.js" />-->
+</html>

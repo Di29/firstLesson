@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Title of the document</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<style type="text/css">
+			.myclass {
+				font-size: 36px;
+				width: 150px;
+			}
+			.myred {
+				background-color: red;
+			}
+			.myyellow{
+				background-color: yellow;
+			}
+		</style>
+		<script type="text/javascript">
+
+			$(document).ready(function(){
+
+				$('td').each(function(index){
+					(this).innerText = Math.round(Math.random()*100);
+				});
+			    // $("td").click(function(){
+					// 	console.log($(this)[0].innerText);
+			    //     $(this).toggleClass('myred');
+			    // });
+					$('td').mouseenter(function(){
+						var a = 0;
+						var b = 0;
+						$(this).toggleClass('myred');
+						$(this).prev('td').toggleClass('myyellow');
+						$(this).next('td').toggleClass('myyellow');
+						$(this).parent().next().children().eq($(this).index()).toggleClass('myyellow');
+						$(this).parent().prev().children().eq($(this).index()).toggleClass('myyellow');
+						$(this).parent().children().each(function(index){
+							a+=$(this)[0].innerText*1;
+						});
+						$('#inp1').val(a);
+						$(this).prev('tr').prev('table').next('tr').children().eq($(this).index()).each(function(index){
+							b+=(this)[0].innerText*1;
+						});
+						$('#inp2').val(b);
+
+					})
+					$('td').mouseleave(function(){
+						$(this).toggleClass('myred');
+						$(this).prev('td').toggleClass('myyellow');
+						$(this).next('td').toggleClass('myyellow');
+						$(this).parent().next().children().eq($(this).index()).toggleClass('myyellow');
+						$(this).parent().prev().children().eq($(this).index()).toggleClass('myyellow');
+					})
+
+			});
+		</script>
+	</head>
+	<body>
+		<table border="1">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>7</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+			</tr>
+		</table>
+		<div>
+			<button type="button" name="button">click</button><br>
+			<input id="inp1" type="text" name="" value=""/> horizontal <br>
+			<input id="inp2" type="text" name="" value=""/> vertical
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Title</title>
+</head>
+<body>
+	<!-- GET/POST -->
+	<form action ="" method = "GET" id="myform">
+		<input type="text" name="myInp"/>
+		<select name ="mySelect">
+			<option value='1'>11111</option>
+			<option value='2'>22222</option>
+			<option value='3'>33333</option>
+		</select>
+		<input type="checkbox" name="mycheck" value ="123">
+		<button type ="submit" id="mybut">SEND</button>
+	</form>
+
+	<div id ='myDiv'>
+		
+	</div>
+
+	<script type="text/javascript">
+		myform.onsubmit = function(event){
+			return false;
+		}
+	</script>
+</body>
+</html>

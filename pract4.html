@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Title</title>
+	<style type="text/css">
+		#maindiv{
+			width: 500px;
+			height: 500px;
+			background-color: grey;
+		}
+		#ball{
+			width: 25px;
+			height: 25px;
+		}
+	</style>
+</head>
+<body>
+	<img id = "ball" src="https://i0.wp.com/sterlingathletics.com/wp-content/uploads/2015/10/Traditional-Hand-Sewn-Soccer-Ball.png?fit=900%2C900&ssl=1">
+	<div id = 'maindiv'></div>
+	<button id = 'mybut'>CLICK</button>
+
+	<script type="text/javascript">
+		mybut.onclick = function (e) {
+			curX = ball.style.left;
+			curY = ball.style.top;
+			while(ball.style.left != e.clientX && ball.style.top != e.clientY){
+				var timerId = setInterval(function() {
+					ball.style.left++;
+					ball.style.top++;
+				} ,100);
+			}
+
+		}
+	</script>
+</body>
+</html>
