@@ -23,20 +23,22 @@
         $('table').delegate('.delete', 'click', function(){
             $(this).parent().parent().remove();
             id--;
-            $('#mainTable').children().each(function(index){
-                $('#id').text('');
-                for(i=0;i<=id;i++){
-                $('#id').text(i);
-                console.log('i=' + id);
-            }
+            $('#id').text('')
             });
+            
+//            for(i=0;i<id;i++){
+//                $('#mainTable').children().each(function(index){
+//                $('#id').text(i)});
+//                    
+//                console.log('i=' + id);
+//            }
             
         });
         
 //        $('table').delegate('edit', 'click', function(){
 //            $(this).parent().parent().
 //        });
-    });
+    ;
 </script>
 </head>
 
