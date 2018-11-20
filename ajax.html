@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX</title>
+	</head>
+	<body>
+		<p id="idp">Test test</p>
+
+		<p id="res"></p>
+		<!-- <input type="" name="">
+		<input type="" name=""> -->
+	</body>
+
+
+
+	<script type="text/javascript">
+		idp.onclick = function () {
+			myxhr = new XMLHttpRequest();
+			myxhr.open("GET", "file.txt", true);
+			myxhr.send();
+
+			myxhr.onreadystatechange = function () {
+				if(myxhr.readyState == 4){
+					alert(myxhr.response)
+				}
+				console.log(myxhr.readyState);
+				
+			}
+		}
+		
+	</script>
+</html>
